@@ -847,7 +847,7 @@
       }
 
       var onlyPromises = map.resolvePropertyValidity(map.only);
-      $q.any(onlyPromises)
+      $q.all(onlyPromises)
         .then(function (resolvedPermissions) {
           deferred.resolve(resolvedPermissions);
         })

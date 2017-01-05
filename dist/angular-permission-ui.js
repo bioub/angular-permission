@@ -418,7 +418,7 @@
 
       return privilegesNames.map(function (statePrivileges) {
         var resolvedStatePrivileges = map.resolvePropertyValidity(statePrivileges);
-        return $q.any(resolvedStatePrivileges)
+        return $q.all(resolvedStatePrivileges)
           .then(function (resolvedPermissions) {
             if (angular.isArray(resolvedPermissions)) {
               return resolvedPermissions[0];
